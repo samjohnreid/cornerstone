@@ -53,6 +53,7 @@ const buildFeatured4 = (posts, imgPaths) => {
             <div class="blog-feed__secondary-container">
                 <h2>PRESS RELEASES</h2>
                 ${latestStories}
+                <p>If you are a member of the media seeking information, please <a href="#">email us</a>.</p>
             </div>
         </section>
     `;

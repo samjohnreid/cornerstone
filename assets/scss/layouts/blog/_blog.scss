@@ -231,11 +231,15 @@
                 }
             }
             
-            .blog-feed__wrapper-link:not(:last-child) {
+            .blog-feed__wrapper-link {
                 margin-bottom: 10px;
 
                 @include breakpoint("small") {
                     margin-bottom: 30px;
+                }
+
+                &:last-of-type {
+                    margin-bottom: 0;
                 }
             }
             
@@ -275,6 +279,21 @@
                 img {
                     height: 100%;
                     object-fit: cover;
+                }
+            }
+
+            & > p {
+                color: #5A6671;
+                font-size: 13px;
+                margin-top: 10px;
+
+                @include breakpoint("small") {
+                    margin-top: 15px;
+                }
+
+                a {
+                    color: #53BCEB;
+                    text-decoration: underline;
                 }
             }
         }
