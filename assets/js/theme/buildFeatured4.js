@@ -1,6 +1,8 @@
 import { extractTag } from './extractTag';
 import { extractSummary } from './extractSummary';
 
+const encodedEmail = '&#097;&#105;&#114;&#119;&#097;&#116;&#101;&#114;&#112;&#114;&#101;&#115;&#115;&#064;&#103;&#101;&#097;&#112;&#112;&#108;&#105;&#097;&#110;&#099;&#101;&#115;&#046;&#099;&#111;&#109;';
+
 const buildFeatured4 = (posts, imgPaths) => {
     const tagsToExclude = ['press release', 'spotlight-left', 'spotlight-center', 'spotlight-right', 'featured', 'hide'];
     const removeNewsAndSpotlights = (post) => {
@@ -53,7 +55,7 @@ const buildFeatured4 = (posts, imgPaths) => {
             <div class="blog-feed__secondary-container">
                 <h2>PRESS RELEASES</h2>
                 ${latestStories}
-                <p>If you are a member of the media seeking information, please <a href="#">email us</a>.</p>
+                <p>If you are a member of the media seeking information, please <a href="mailto:${encodedEmail}">email us</a>.</p>
             </div>
         </section>
     `;
