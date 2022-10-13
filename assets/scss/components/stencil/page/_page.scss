@@ -41,3 +41,29 @@
         }
     }
 }
+
+.tlw {
+    border-top: 1px dashed gray;
+    border-bottom: 1px dashed gray;
+    padding: 80px 0;
+
+    &__header {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+
+        h2 {
+            color: green;
+            margin: 0;
+        }
+
+        a {
+            color: yellow;
+        }
+    }
+
+    &__posts-wrapper {
+        border: 1px dashed green;
+    }
+}
