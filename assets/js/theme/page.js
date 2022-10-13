@@ -33,9 +33,7 @@ export default class Page extends PageManager {
 
     thoughtLeadershipWidget() {
         const tlwContainer = document.getElementById('tl-widget-container');
-        if (tlwContainer) {
-            buildTlWidget(tlwContainer);
-        }
+        tlwContainer && buildTlWidget(tlwContainer);
     }
     
     onReady() {
