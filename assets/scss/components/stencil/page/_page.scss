@@ -43,8 +43,7 @@
 }
 
 .tlw {
-    border-top: 1px dashed gray;
-    border-bottom: 1px dashed gray;
+    background: linear-gradient(0deg, rgba(52,113,156,1) 0%, rgba(22,47,72,1) 100%);
     padding: 80px 0;
 
     &__header {
@@ -54,16 +53,30 @@
         margin-bottom: 40px;
 
         h2 {
-            color: green;
+            color: #fff;
+            font-size: 54px;
             margin: 0;
         }
 
         a {
-            color: yellow;
+            background: #53BCEB;
+            color: #fff;
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 20px 30px;
         }
     }
 
     &__posts-wrapper {
         border: 1px dashed green;
+    }
+
+    &__posts-primary {
+        border: 10px dashed red;
+    }
+
+    &__posts-secondary {
+        border: 10px dashed yellow;
     }
 }

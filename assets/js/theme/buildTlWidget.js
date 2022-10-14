@@ -28,15 +28,18 @@ const buildTlWidget = (tlwContainer) => {
             post.thumbnail.data = imgPath;
         });
 
-        const tlwPosts = posts.map((post) => {
+        const tlwPosts = posts.map((post, index) => {
             return `
-                <li>
+                ${index === 0 ? `<div class="tlw__posts-primary">` : ``}
+                ${index === 1 ? `</div><div class="tlw__posts-secondary">` : ``}
+                <div>
                     <a href="${post.url}">
                         <div><img src="${post.thumbnail.data}" /></div>
                         <div>${extractTag(post.tags)}</div>
                         <div>${post.title}</div>
                     </a>
-                </li>
+                </div>
+                ${index === posts.length ? `</div>` : ``}
             `;
         }).join('');
         
