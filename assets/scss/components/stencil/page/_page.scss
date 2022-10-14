@@ -65,18 +65,115 @@
             font-size: 18px;
             font-weight: bold;
             padding: 20px 30px;
+
+            &:hover {
+                background: #0e3d71;
+            }
         }
     }
 
     &__posts-wrapper {
-        border: 1px dashed green;
+        display: flex;
+        justify-content: space-between;
     }
 
     &__posts-primary {
-        border: 10px dashed red;
+        width: 49%;
+        
+        .tlw__post {
+            height: 100%;
+
+            .tlw__wrapper-link {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+            
+            .tlw__post-image {
+                height: 100%;
+        
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+    
+            .tlw__summary {
+                @include truncate(2);
+                color: #000;
+                margin-bottom: 0;
+            }
+        }
     }
 
     &__posts-secondary {
-        border: 10px dashed yellow;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 49%;
+        
+        .tlw__post {
+            width: 48%;
+
+            &:nth-child(1),
+            &:nth-child(2) {
+                margin-bottom: 15px;
+            }
+
+            &:nth-child(3),
+            &:nth-child(4) {
+                margin-top: 15px;
+            }
+
+            .tlw__post-image {
+
+                img {
+                    height: 230px;
+                    object-fit: cover;
+                }
+            }
+            
+            .tlw__tag {
+                font-size: 17px;
+            }
+            
+            .tlw__title {
+                font-size: 18px;
+            }
+        }
+    }
+
+    &__post {
+        
+        .tlw__wrapper-link {
+            border: 1px solid #53BCEB;
+            display: block;
+        }
+        
+        .tlw__post-text {
+            padding: 20px;
+        }
+        
+        .tlw__tag {
+            color: #53BCEB;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: normal;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+
+            @include breakpoint("small") {
+                font-size: 19px;
+            }
+        }
+        
+        .tlw__title {
+            @include truncate(2);
+            color: #fff;
+            font-size: 20px;
+            margin-bottom: 10px;
+            line-height: normal;
+            text-transform: uppercase;
+        }
     }
 }

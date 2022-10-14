@@ -1,5 +1,6 @@
 import { api } from '@bigcommerce/stencil-utils';
 import { extractTag } from './extractTag';
+import { extractSummary } from './extractSummary';
 
 const options = {
     template: 'blog/blog-json',
@@ -32,11 +33,16 @@ const buildTlWidget = (tlwContainer) => {
             return `
                 ${index === 0 ? `<div class="tlw__posts-primary">` : ``}
                 ${index === 1 ? `</div><div class="tlw__posts-secondary">` : ``}
-                <div>
-                    <a href="${post.url}">
-                        <div><img src="${post.thumbnail.data}" /></div>
-                        <div>${extractTag(post.tags)}</div>
-                        <div>${post.title}</div>
+                <div class="tlw__post">
+                    <a href="${post.url}" class="tlw__wrapper-link">
+                        <div class="tlw__post-image">
+                            <img src="${post.thumbnail.data}" alt="${post.title}" />
+                        </div>
+                        <div class="tlw__post-text">
+                            <h3 class="tlw__tag">${extractTag(post.tags)}</h3>
+                            <h2 class="tlw__title"  style="-webkit-box-orient: vertical">${post.title}</h2>
+                            ${index === 0 ? `<p class="tlw__summary" style="-webkit-box-orient: vertical">${extractSummary(post.summary)}</p>` : ``}
+                        </div>
                     </a>
                 </div>
                 ${index === posts.length ? `</div>` : ``}
@@ -49,7 +55,7 @@ const buildTlWidget = (tlwContainer) => {
                 <div class="tlw__wrapper container">
                     <div class="tlw__header">
                         <h2>SEE WHAT WE'RE UP TO</h2>
-                        <a href="">SEE ALL ARTICLES</a>
+                        <a href="/articles/">SEE ALL ARTICLES</a>
                     </div>
                     <div class="tlw__posts-wrapper">
                         ${tlwPosts}
