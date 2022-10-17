@@ -49,13 +49,25 @@
     &__header {
         align-items: center;
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
         margin-bottom: 40px;
 
+        @include breakpoint("small") {
+            flex-direction: row;
+        }
+
         h2 {
             color: #fff;
-            font-size: 54px;
-            margin: 0;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+
+            @include breakpoint("small") {
+                font-size: 54px;
+                margin-bottom: 0;
+                text-align: left;
+            }
         }
 
         a {
@@ -74,11 +86,22 @@
 
     &__posts-wrapper {
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
+
+        @include breakpoint("small") {
+            flex-direction: row;
+        }
     }
 
     &__posts-primary {
-        width: 49%;
+        margin-bottom: 20px;
+        width: 100%;
+
+        @include breakpoint("small") {
+            margin-bottom: 0;
+            width: 49%;
+        }
         
         .tlw__post {
             height: 100%;
@@ -110,19 +133,37 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        width: 49%;
+        width: 100%;
+
+        @include breakpoint("small") {
+            width: 49%;
+        }
         
         .tlw__post {
-            width: 48%;
+            margin-bottom: 20px;
+            width: 100%;
+
+            @include breakpoint("small") {
+                margin-bottom: 0;
+                width: 48%;
+            }
 
             &:nth-child(1),
             &:nth-child(2) {
-                margin-bottom: 15px;
+                margin-bottom: 20px;
+
+                @include breakpoint("small") {
+                    margin-bottom: 15px;
+                }
             }
 
             &:nth-child(3),
             &:nth-child(4) {
-                margin-top: 15px;
+                margin-top: 0;
+
+                @include breakpoint("small") {
+                    margin-top: 15px;
+                }
             }
 
             .tlw__post-image {
