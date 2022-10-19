@@ -123,7 +123,7 @@
     
             .tlw__summary {
                 @include truncate(2);
-                color: #000;
+                color: #fff;
                 margin-bottom: 0;
             }
         }
