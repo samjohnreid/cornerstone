@@ -4,7 +4,7 @@ import { extractSummary } from './extractSummary';
 const encodedEmail = '&#097;&#105;&#114;&#119;&#097;&#116;&#101;&#114;&#112;&#114;&#101;&#115;&#115;&#064;&#103;&#101;&#097;&#112;&#112;&#108;&#105;&#097;&#110;&#099;&#101;&#115;&#046;&#099;&#111;&#109;';
 
 const buildFeatured4 = (posts, imgPaths) => {
-    const tagsToExclude = ['press release', 'spotlight-left', 'spotlight-center', 'spotlight-right', 'featured', 'hide'];
+    const tagsToExclude = ['news', 'spotlight-left', 'spotlight-center', 'spotlight-right', 'featured', 'hide'];
     const removeNewsAndSpotlights = (post) => {
         const postType = !post.tags.find(tag => tagsToExclude.includes(tag.name.toLowerCase()));
         return postType;
@@ -28,7 +28,7 @@ const buildFeatured4 = (posts, imgPaths) => {
         `;
     }).join('');
 
-    const latestStoryPosts = posts.filter(post => post.tags.some(tag => tag.name === 'press release'));
+    const latestStoryPosts = posts.filter(post => post.tags.some(tag => tag.name === 'news'));
     const latestStories = latestStoryPosts.slice(0,5).map((post) => {
         const postImg = imgPaths.find(item => item.alt === post.title);
         return `
@@ -53,7 +53,7 @@ const buildFeatured4 = (posts, imgPaths) => {
                 ${latestPosts}
             </div>
             <div class="blog-feed__secondary-container">
-                <h2>PRESS RELEASES</h2>
+                <h2>NEWS</h2>
                 ${latestStories}
                 <p>If you are a member of the media seeking information, please <a href="mailto:${encodedEmail}">email us</a>.</p>
             </div>

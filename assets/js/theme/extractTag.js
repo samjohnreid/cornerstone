@@ -1,4 +1,4 @@
-const postTypes = ['general', 'industry trend', 'installation', 'news', 'press release', 'service'];
+const postTypes = ['general', 'industry trend', 'installation', 'news', 'service'];
 
 const extractTag = (tags) => {
     const postType = tags.find(tag => postTypes.includes(tag.name.toLowerCase()));

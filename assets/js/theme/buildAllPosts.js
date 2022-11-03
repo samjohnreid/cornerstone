@@ -108,7 +108,6 @@ const buildAllPosts = (posts, imgPaths) => {
                                     <li><input type="checkbox" id="blogFilterIndustryTrend" value="industry trend" /> <label for="blogFilterIndustryTrend">Industry Trend</label></li>
                                     <li><input type="checkbox" id="blogFilterInstallation" value="installation" /> <label for="blogFilterInstallation">Installation</label></li>
                                     <li><input type="checkbox" id="blogFilterNews" value="news" /> <label for="blogFilterNews">News</label></li>
-                                    <li><input type="checkbox" id="blogFilterPressRelease" value="press release" /> <label for="blogFilterPressRelease">Press Release</label></li>
                                     <li><input type="checkbox" id="blogFilterService" value="service" /> <label for="blogFilterService">Service</label></li>
                                 </ul>
                             </details>
