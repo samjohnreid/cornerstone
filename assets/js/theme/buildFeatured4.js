@@ -36,7 +36,7 @@ const buildFeatured4 = (posts, imgPaths) => {
                 <div class="blog-feed__post">
                     <div class="blog-feed__post-text">
                         <h3 class="blog-feed__tag">${extractTag(post.tags)}</h3>
-                        <h2 class="blog-feed__title">${post.title}</h2>
+                        <h2 class="blog-feed__title" style="-webkit-box-orient: vertical">${post.title}</h2>
                     </div>
                     <div class="blog-feed__post-image">
                         ${postImg && postImg.outerHTML}
