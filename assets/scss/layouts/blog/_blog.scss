@@ -262,6 +262,7 @@
             }
             
             .blog-feed__title {
+                @include truncate(2);
                 font-size: 14px;
 
                 @include breakpoint("small") {
